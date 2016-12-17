@@ -228,6 +228,7 @@ module Math
   #
   # ```
   # Math.pw2ceil(33) #=> 64
+  # ```
   def pw2ceil(v)
     # Taken from http://graphics.stanford.edu/~seander/bithacks.html#RoundUpPowerOf2
     v -= 1

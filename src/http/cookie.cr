@@ -210,6 +210,7 @@ module HTTP
     #
     # ```
     # request.cookies.has_key?("foo") #=> true
+    # ```
     def has_key?(key)
       @cookies.has_key?(key)
     end

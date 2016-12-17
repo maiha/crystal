@@ -1207,6 +1207,7 @@ class Array(T)
   # a = [1]
   # a.pop { "Testing" } #=> 1
   # a.pop { "Testing" } #=> "Testing"
+  # ```
   def pop
     if @size == 0
       yield

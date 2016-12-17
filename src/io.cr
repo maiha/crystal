@@ -177,6 +177,7 @@ module IO
   # slice = Slice(UInt8).new(4) { |i| ('a'.ord + i).to_u8 }
   # io.write(slice)
   # io.to_s #=> "abcd"
+  # ```
   abstract def write(slice : Slice(UInt8)) : Nil
 
   # Closes this IO.

@@ -273,6 +273,7 @@ module FileUtils
   # Removes all directories at the given *paths*.
   # ```
   # FileUtils.rmdir(["dir1", "dir2", "dir3"])
+  # ```
   def rmdir(paths : Enumerable(String)) : Nil
     paths.each do |path|
       Dir.rmdir(path)
