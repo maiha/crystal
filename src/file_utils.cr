@@ -4,6 +4,7 @@ module FileUtils
   # Changes the current working directory of the process to the given string *path*.
   # Alias of Dir.cd.
   # ```
+  # require "file_utils"
   # FileUtils.cd("to/directory")
   # ```
   def cd(path : String)
