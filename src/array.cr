@@ -1290,7 +1290,7 @@ class Array(T)
   #
   # ```
   # a = ["a"]
-  # a.push(["b", "c"]) # => ["a", "b", "c"]
+  # a.push("b", "c") # => ["a", "b", "c"]
   # ```
   def push(*values : T)
     new_size = @size + values.size
