@@ -29,7 +29,7 @@ require "c/unistd"
 #   def read(slice : Slice(UInt8))
 #     slice.size.times { |i| slice[i] = @slice[i] }
 #     @slice += slice.size
-#     count
+#     slice.size
 #   end
 #
 #   def write(slice : Slice(UInt8))
@@ -495,7 +495,7 @@ module IO
   # slice = Slice(UInt8).new(5)
   # io.read_fully(slice) # => 5
   # slice                # => [49, 50, 51, 52, 53]
-  # io.read_fully        # => EOFError
+  # io.read_fully(slice) # => EOFError
   # ```
   def read_fully(slice : Slice(UInt8))
     read_fully?(slice) || raise(EOFError.new)
@@ -510,7 +510,7 @@ module IO
   # slice = Slice(UInt8).new(5)
   # io.read_fully?(slice) # => 5
   # slice                 # => [49, 50, 51, 52, 53]
-  # io.read_fully?        # => nil
+  # io.read_fully?(slice) # => nil
   # ```
   def read_fully?(slice : Slice(UInt8))
     count = slice.size
