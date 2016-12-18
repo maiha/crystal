@@ -66,9 +66,14 @@ module Math
 
   # Calculates the logarithmic gamma of *value*.
   #
-  # lgamma(x) is the same as
   # ```
-  # Math.log(Math.gamma(x).abs)
+  # Math.lgamma(2.96)
+  # ```
+  #
+  # Is the same as writing:
+  #
+  # ```
+  # Math.log(Math.gamma(2.96).abs)
   # ```
   def lgamma(value : Float32)
     {% if flag?(:darwin) %}
