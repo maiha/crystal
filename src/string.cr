@@ -994,7 +994,7 @@ class String
   # "string\n\r".chomp # => "string\n"
   # "string\n".chomp   # => "string"
   # "string".chomp     # => "string"
-  # "x".chomp.chmop    # => "x"
+  # "x".chomp.chomp    # => "x"
   # ```
   #
   # See also: `#chop`
