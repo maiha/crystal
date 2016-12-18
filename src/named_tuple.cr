@@ -41,9 +41,9 @@ struct NamedTuple
   # Creates a named tuple from the given hash, with elements casted to the given types. See `#from`.
   #
   # ```
-  # NamedTuple(foo: String, bar: Int64).from({:foo => "world", :bar => 2})       # => {foo: "world", bar: 2}
-  # NamedTuple(foo: String, bar: Int64).from({"foo" => "world", "bar" => 2})     # => {foo: "world", bar: 2}
-  # NamedTuple(foo: String, bar: Int64).from({:foo => "world", :bar => 2}).class # => {foo: String, bar: Int64}
+  # NamedTuple(foo: String, bar: Int32).from({:foo => "world", :bar => 2})       # => {foo: "world", bar: 2}
+  # NamedTuple(foo: String, bar: Int32).from({"foo" => "world", "bar" => 2})     # => {foo: "world", bar: 2}
+  # NamedTuple(foo: String, bar: Int32).from({:foo => "world", :bar => 2}).class # => {foo: String, bar: Int32}
   # ```
   def self.from(hash : Hash)
     {% begin %}
@@ -275,7 +275,7 @@ struct NamedTuple
   #
   # Output:
   #
-  # ```
+  # ```text
   # name = Crystal
   # year = 2011
   # ```
@@ -297,7 +297,7 @@ struct NamedTuple
   #
   # Output:
   #
-  # ```
+  # ```text
   # name
   # year
   # ```
@@ -319,7 +319,7 @@ struct NamedTuple
   #
   # Output:
   #
-  # ```
+  # ```text
   # Crystal
   # 2011
   # ```
@@ -341,7 +341,7 @@ struct NamedTuple
   #
   # Output:
   #
-  # ```
+  # ```text
   # 1) name = Crystal
   # 2) year = 2011
   # ```
@@ -359,7 +359,7 @@ struct NamedTuple
   #
   # ```
   # tuple = {name: "Crystal", year: 2011}
-  # tuple.map { |k, v| "#{name}: #{year}" } # => ["name: Crystal", "year: 2011"]
+  # tuple.map { |k, v| "#{k}: #{v}" } # => ["name: Crystal", "year: 2011"]
   # ```
   def map
     array = Array(typeof(yield first_key_internal, first_value_internal)).new(size)
